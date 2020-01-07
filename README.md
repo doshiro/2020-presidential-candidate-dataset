@@ -1,4 +1,7 @@
-# 2020-presidential-candidate-dataset
+# 2020 Presidential Candidate Dataset
+
+![Project Header](/images/header.jpg)
+
 A Dataset of 2020 Presidential Candidate speeches used in https://github.com/doshiro/classifying-political-speech-with-rnns-and-cnns, a project where I used Convolutional and Reccurent Neural Networks to classify candidate speeches from 12 different 2020 primary presidential candidates. See the other repo for more information
 
 Relies on youtube-transcript-api from https://pypi.org/project/youtube-transcript-api/ to grab the subtitles.
