@@ -1,3 +1,5 @@
+# filters out random characters, better data consistency
+
 import os
 
 def filter(filename):
@@ -10,6 +12,7 @@ def filter(filename):
     f.close()
     g.close()
 
-for filename in os.listdir(os.getcwd()):
-    if (filename != 'filter.py' and filename != 'filtered'):
-        filter(filename)
+if __name__ == '__main__':
+    for filename in os.listdir(os.getcwd()):
+        if (filename != 'filter.py' and filename != 'filtered'):
+            filter(filename)

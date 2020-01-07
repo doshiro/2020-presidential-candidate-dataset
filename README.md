@@ -1,6 +1,7 @@
 # 2020-presidential-candidate-dataset
 A Dataset of 2020 Presidential Candidate speeches used in X
 
+Relies on youtube-transcript-api from https://pypi.org/project/youtube-transcript-api/ to grab the subtitles.
 
 Here's the sources for the above data: 
 

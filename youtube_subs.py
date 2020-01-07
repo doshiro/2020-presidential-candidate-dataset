@@ -1,5 +1,13 @@
+#File used to produce candidate-video-data, including video sources
+# Essentially rips the subs from YouTube videos, as this is a large
+# source of data with candidates speaking for long periods of time
+# (rallys, senate hearings, etc.)
+
+# relies on youtube_transcript_api from https://pypi.org/project/youtube-transcript-api/
 from youtube_transcript_api import YouTubeTranscriptApi
 
+# Transcripts come as JSON, flatten the relevant 
+# 'text' field to string for parsing
 def flattenTranscript(transcript):
     text = ''
     i = 0
@@ -10,6 +18,7 @@ def flattenTranscript(transcript):
            text += "\n"
     return text
 
+# His speech only started after this word, so filter out the rest
 def filterPete(pete):
     pete_split = pete.split()
     filtered = []
@@ -27,6 +36,8 @@ def filterPete(pete):
                     filtered.append('\n')
     return ' '.join(filtered)
 
+
+# Used for formatting sources later
 def yt_link(vid_id):
     return 'https://www.youtube.com/watch?v=' + vid_id
 
@@ -38,7 +49,6 @@ def yt_link(vid_id):
 # open each as a file
 # flatten
 # save
-
 def make_files(vids, filename):
     f = open(filename + ".txt", "w+", encoding='utf-8')
     g = open(filename + "_links.txt", 'w+')

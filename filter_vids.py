@@ -1,3 +1,5 @@
+## The subtitles had things like [APPLAUSE] or Speaker: so remove those
+
 import os
 
 def goodword(word):
@@ -12,7 +14,8 @@ def filterfile(filename):
     f.close()
     g.close()
 
-for filename in os.listdir(os.getcwd()):
-    if (filename != 'filter_cids.py' and filename != 'filtered'):
-        print(filename)
-        filterfile(filename)
+if __name__ == '__main__':
+    for filename in os.listdir(os.getcwd()):
+        if (filename != 'filter_cids.py' and filename != 'filtered'):
+            print(filename)
+            filterfile(filename)

@@ -1,5 +1,7 @@
 import os
 
+dataset_dir = 'C:\\Users\\usr1\\python\\final project\\merged-filtered-candidate-data'
+
 def char_type(char):
     if char.isalpha(): return 1
     if char.isdigit(): return 2
@@ -27,9 +29,14 @@ def tokenize(line):
                 new_line.append(word)
     return ' '.join(new_line)
 
-dataset_dir = 'C:\\Users\\usr1\\python\\final project\\merged-filtered-candidate-data'
-for filename in os.listdir(dataset_dir):
-    f = open(dataset_dir + '\\' + filename, 'r')
-    g = open(dataset_dir + '\\tokenized\\' + filename, 'w+')
-    for line in f.readlines():
-        g.write(tokenize(line) + '\n')
+
+def tokenize_dataset():
+    for filename in os.listdir(dataset_dir):
+        f = open(dataset_dir + '\\' + filename, 'r')
+        g = open(dataset_dir + '\\tokenized\\' + filename, 'w+')
+        for line in f.readlines():
+            g.write(tokenize(line) + '\n')
+
+# tokenize the dataset
+if __name__ == '__main__':
+    tokenize_dataset()
